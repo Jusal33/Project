@@ -1,0 +1,50 @@
+#home{
+    cursor: pointer;
+    transition: all 0ms ease;
+}
+h1{
+    font-style: italic;
+    font-weight: bolder;
+}
+#p1{
+    text-align: left;
+    font-weight: bold;
+    background-color: aqua;
+}
+#p2{
+    text-align: left;
+    font-weight: bold;
+    background-color: aqua;
+}
+#p3{
+    font-style: oblique;
+}
+#p4{
+    font-style: oblique;
+}
+.odd{
+    font-weight: bolder;
+    background-color: lawngreen;
+}   
+#p9{
+    font-style: oblique;
+    background-color: royalblue;
+    font-weight: bolder;
+}
+#p5{
+    font-style: oblique;
+    background-color: royalblue;
+    font-weight: bolder;
+}
+#a1{
+    color: fuchsia;
+}
+#a1:visited{
+    color: royalblue;
+}
+#a1:hover{
+    color: darkviolet;
+}
+#a1:active{
+    color: tomato;
+}

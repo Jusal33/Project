@@ -1,0 +1,114 @@
+<HTML>
+	<HEAD><TITLE>Register the form</TITLE>
+	<SCRIPT Language = "Javascript">
+
+
+         function verify() {
+			for (i=0; i<=9; i++) {
+				if (document.forms[0].elements[i].value == "") 
+				{	
+					alert("Please fill in the " +document.forms[0].elements[i].name + " fields properly");
+					document.forms[0].elements[i].focus( );
+					return (false);
+				}
+				
+				
+			}	
+		return(true);
+	}
+	
+		function checkdate() {
+			year=document.forms[0].elements[7].value;
+			if (year>1983) {
+				alert("Enter proper year (till 1983)");
+				document.forms[0].elements[7].focus();
+				return(false);
+			}
+			
+			dtval=document.forms[0].elements[5].value;
+			if ((dtval > 31) || (dtval < 1)) {
+				alert("Enter proper date");
+				document.forms[0].elements[5].focus();
+				return(false);
+			}
+                        monval=document.forms[0].elements[6].value;
+			if (isNaN(monval) != true) {
+				if ((monval > 12) || (monval < 1)) {
+					alert("Enter proper month");
+					document.forms[0].elements[6].focus();
+					return(false);
+				}
+			} 
+			else {
+				alert("Enter the month number");
+				document.forms[0].elements[6].focus();
+				return(false);
+			}
+			return (true);
+		}
+	
+		function checklen() {
+			for (i=0; i<=1; i++) {
+			val=document.forms[0].elements[i].value;
+			len=val.length;
+			if (len > 30) {
+				alert ("Value exceeds 30 characters");
+				document.forms[0].elements[i].value="";
+				document.forms[0].elements[i].focus();
+			} 
+		}
+	}
+	
+		function abort(form) {
+			history.back();
+		}
+	
+		function set(form) {
+			document.forms[0].elements[0].focus();
+		}
+
+
+
+			
+                        
+			
+	
+            
+		
+	</SCRIPT></HEAD>
+	<BODY Background="img\15MAY96P.JPG" >
+	<h1 style="position:relative; left:200"><b>REGISTRATION FORM</b></h1>
+		<b><center><font size=5 color=brown> This form is for sign in</font></center>
+		<P><P><CENTER>
+		<P><FORM  Action="" Method="POST" onSubmit="return verify()">
+			<P>First Name
+			<INPUT Type="text" Name="name" Size="12" color="red" onBlur="checklen()" >
+			<P>Last Name
+			<INPUT Type="text" Name="lastname" Size="12" color="red" onBlur="checklen()" >
+			<P> E-Mail address
+			<INPUT Type="Text" Name="email" Size="25" onBlur="checklen()">
+			<P>Please indicate your Sex
+			<INPUT Type="Radio" Name="sex" Value="m" checked>Male
+			
+			<INPUT Type="Radio" Name="sex" Value="f" >Female<BR>
+			<P>Please enter your DOB as DD/MM/YYYY<BR>
+			<INPUT Type="Text" Name="day" Size="2" >
+			
+			<INPUT Type="Text" Name="month" Size="2">
+			
+			<INPUT Type="Text" Name="year" Size="4" >
+			<P>	<P>Please Type your full address 
+			<TEXTAREA NAME="request" ROWS="3" COLS="50" >
+			</TEXTAREA>
+			<P><P>Can we contact you with information about our products or services.<BR>
+			<INPUT Type="Radio" Name="moreinfo" Value="y">
+			<FONT Color = "Blue">Yes</FONT><IMG Src="img/emailmev.gif" length=30 height=30 >
+			<INPUT Type="Radio" Name="moreinfo" Value="n" Checked="True">
+			<FONT Color = "Red">No, Thanks!</FONT> 
+			<P><CENTER><INPUT Type="Submit" Value="Submit" Name="Submit">
+			<INPUT Type="Reset" Value="Reset" Name="Submit"> 
+			<INPUT Type="Button" Value="Abort" Name="At" onClick = "abort(this.form1)">
+			</FORM>
+		
+	</BODY>
+</HTML>
